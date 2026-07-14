@@ -8,3 +8,5 @@ ImmersiveDaylightCycle-FikaBridge/obj/
 ImmersiveDaylightCycle-Server/src/*.js
 ImmersiveDaylightCycle-Server/src/*.js.map
 ImmersiveDaylightCycle-Server/node_modules/
+/ImmersiveDaylightCycle-Server-CSharp/obj
+/ImmersiveDaylightCycle-FikaModule/bin/Debug

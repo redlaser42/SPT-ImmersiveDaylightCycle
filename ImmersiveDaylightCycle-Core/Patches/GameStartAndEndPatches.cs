@@ -10,6 +10,7 @@ using System;
 using System.Linq;
 using System.Reflection;
 
+
 namespace Jehree.ImmersiveDaylightCycle.Patches
 {
 
@@ -24,12 +25,25 @@ namespace Jehree.ImmersiveDaylightCycle.Patches
         [PatchPostfix]
         static void Postfix()
         {
+            Plugin.logger.LogError("IDC: OnGameStarted");
+
             if (!Settings.ModEnabled.Value) return;
 
             if (FikaBridge.IAmHost())
             {
-                Utils.ServerRoute(Utils.HostRaidStartedURL, FikaBridge.GetRaidId());
+                Plugin.logger.LogError("Game Start - FIKA Bridge I am Host");
+
+                var request = new HostRaidStartedRequest
+                {
+                    Data = FikaBridge.GetRaidId()
+                };
+
+                //Utils.ServerRoute(Utils.HostRaidStartedURL, request);
+                //Plugin.logger.LogError($"HostRaidStartedRequest: '{request}'");
+
             }
+            Plugin.logger.LogError("Setting Raid Time:");
+
             Utils.SetRaidTime();
         }
     }
@@ -51,11 +65,12 @@ namespace Jehree.ImmersiveDaylightCycle.Patches
         }
 
         [PatchPostfix]
-        static void Postfix(LocalRaidSettings settings, GClass1959 results)
+        static void Postfix(LocalRaidSettings settings, RaidEndDescriptorClass results)
         {
             if (!Settings.ModEnabled.Value) return;
+            Plugin.logger.LogError("OfflineRaidEndedPatch Fired");
 
-            IDCClientExitInfo exitInfo = new IDCClientExitInfo
+            IDCClientExitInfoRequest exitInfo = new IDCClientExitInfoRequest
             {
                 RaidId = FikaBridge.GetRaidId(),
                 ProfileId = Singleton<GameWorld>.Instance.MainPlayer.ProfileId,
@@ -67,5 +82,6 @@ namespace Jehree.ImmersiveDaylightCycle.Patches
 
             Utils.ServerRoute(Utils.ClientLeftRaidURL, exitInfo);
         }
+
     }
 }

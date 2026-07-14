@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.10.34928.147
+# Visual Studio Version 18
+VisualStudioVersion = 18.7.11919.86 stable
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImmersiveDaylightCycle", "ImmersiveDaylightCycle-Core\ImmersiveDaylightCycle.csproj", "{3DEAF042-D757-41CD-A8F3-6E2B51181AAB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImmersiveDaylightCycle-FikaModule", "ImmersiveDaylightCycle-FikaModule\ImmersiveDaylightCycle-FikaModule.csproj", "{C59CC5E8-0142-4983-9BB1-13E1A439401E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fika.Core", "..\..\..\Mods Dev\Fika-Plugin\Fika.Core\Fika.Core.csproj", "{2CCDA331-3BB0-0219-D908-715056413C81}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{C59CC5E8-0142-4983-9BB1-13E1A439401E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C59CC5E8-0142-4983-9BB1-13E1A439401E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C59CC5E8-0142-4983-9BB1-13E1A439401E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CCDA331-3BB0-0219-D908-715056413C81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CCDA331-3BB0-0219-D908-715056413C81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CCDA331-3BB0-0219-D908-715056413C81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CCDA331-3BB0-0219-D908-715056413C81}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

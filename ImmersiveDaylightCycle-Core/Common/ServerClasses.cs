@@ -4,41 +4,27 @@ using Newtonsoft.Json.Converters;
 
 namespace ImmersiveDaylightCycle.Common
 {
-    public class IDCClientExitInfo
+    public class IDCClientExitInfoRequest
     {
-        [JsonProperty("raid_id")]
-        public string RaidId { get; set; }
-
-        [JsonProperty("profile_id")]
-        public string ProfileId { get; set; }
-
-        [JsonProperty("exit_status")]
-        [JsonConverter(typeof(StringEnumConverter))]
+        public string RaidId { get; set; } = string.Empty;
+        public string ProfileId { get; set; } = string.Empty;
         public ExitStatus ExitStatus { get; set; }
-
-        [JsonProperty("is_host")]
         public bool IsHost { get; set; }
-
-        [JsonProperty("is_dedicated_client")]
         public bool IsDedicatedClient { get; set; }
-
-        [JsonProperty("seconds_in_raid")]
         public int SecondsInRaid { get; set; }
+    }
+
+    public class HostRaidStartedRequest
+    {
+        public string Data { get; set; }
     }
 
     public class IDCTime
     {
-        [JsonProperty("hour")]
         public int Hour { get; set; }
-
-        [JsonProperty("minute")]
         public int Minute { get; set; }
-
-        [JsonProperty("second")]
         public int Second { get; set; }
-
-        [JsonProperty("cycle_rate")]
-        public int CycleRate { get; set; }
+        public float CycleRate { get; set; }
     }
 
     public class IDCCommand

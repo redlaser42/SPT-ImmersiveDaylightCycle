@@ -61,9 +61,6 @@ namespace Jehree.ImmersiveDaylightCycle.Patches
 
             Utils.DisableTimeUI(____nextPhaseTime, ____pmTimeToggle);
             Utils.EnableTimeUI(____currentPhaseTime, ____amTimeToggle, dateTime.ToString("HH:mm:ss"));
-#if DEBUG
-            Plugin.LogSource.LogError(raidSettings.SelectedLocation.Id);
-#endif
         }
     }
 
