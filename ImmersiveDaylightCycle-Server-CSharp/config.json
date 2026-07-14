@@ -1,9 +1,9 @@
 {
     "raid_exit_time_jump": 1,
-    "cycle_rate": 5,
+    "cycle_rate": 3,
     "time_resets_on_death": true,
-    "time_resets_on_disconnect": true,
-    "reset_hour": 8,
-    "reset_minute": 0,
+    "time_resets_on_disconnect": false,
+    "reset_hour": 5,
+    "reset_minute": 30,
     "reset_second": 0
 }
